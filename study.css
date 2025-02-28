@@ -27,6 +27,57 @@
             font-weight: 600;
             font-size: 1.8rem;
         }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          nav a, nav ul li a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            float: right;
+            margin-left: 40px;
+          }
+          
+          nav a i, nav a i {
+            margin-right: 0.5rem;
+          }
+          
+          nav a:hover, nav  a:hover {
+            color: var(--accent-color);
+          }
+          
+          nav a::after, nav  a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+          }
+          
+          nav a:hover::after, nav a:hover::after {
+            width: 100%;
+          }
+          
+          nav ul {
+            list-style: none;
+            display: flex;
+          }
+          
+          nav ul li {
+            margin-right: 1rem;
+          }
 
         main {
             flex: 1;

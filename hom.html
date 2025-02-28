@@ -15,7 +15,7 @@
   <header>
     <h1>Welcome to Our School - College Baptiste Gacuba II</h1>
     <nav>
-      <a href="first.html"><i class="fas fa-home"></i> Home</a>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
       <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
       <!-- <a href="owner.html"><i class="fas fa-key"></i> Conductors</a> -->
       <a href="body.html"><i class="fas fa-newspaper"></i> News</a>
@@ -42,10 +42,39 @@
     </div>
 
   </div>
+  <div class="modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <img src="" alt="Enlarged image">
+    </div>
+</div>
 
   <footer>
     <p>&copy; 2024 Our School | All Rights Reserved</p>
   </footer>
+  <script>
+    const moda = document.querySelector('.modal');
+    const modalIm = document.querySelector('.modal-content img');
+    const closeModa = document.querySelector('.close-modal');
 
+    const galleryItem = document.querySelectorAll('.gallery');
+    galleryItem.forEach(item => {
+        item.addEventListener('click', () => {
+            moda.style.display = 'flex';
+            modalIm.src = item.querySelector('img').src;
+        });
+    });
+
+    closeModa.addEventListener('click', () => {
+        moda.style.display = 'none';
+    });
+
+    // To hide modal when clicking outside of the image
+    window.onclick = (event) => {
+        if (event.target === moda) {
+            moda.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>

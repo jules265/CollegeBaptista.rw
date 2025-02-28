@@ -50,10 +50,38 @@
         <p id="event">We look forward to organizing more such events in the future, building stronger ties between our schools, and fostering a culture of mutual respect and academic excellence.</p>
     </div>
 </div>
-
+<div class="modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <img src="" alt="Enlarged image">
+    </div>
+</div>
 <footer>
     <p>&copy; 2025 School Visiting Day. All Rights Reserved.</p>
 </footer>
+<script>
+    const moda = document.querySelector('.modal');
+    const modalIm = document.querySelector('.modal-content img');
+    const closeModa = document.querySelector('.close-modal');
 
+    const galleryItem = document.querySelectorAll('.photo-placeholder');
+    galleryItem.forEach(item => {
+        item.addEventListener('click', () => {
+            moda.style.display = 'flex';
+            modalIm.src = item.querySelector('img').src;
+        });
+    });
+
+    closeModa.addEventListener('click', () => {
+        moda.style.display = 'none';
+    });
+
+    // To hide modal when clicking outside of the image
+    window.onclick = (event) => {
+        if (event.target === moda) {
+            moda.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>
